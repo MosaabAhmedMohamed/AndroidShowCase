@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Android show case</string>
+    <string name="opps">Opps...</string>
+    <string name="retry">retry</string>
+    <string name="desc">desc</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="HomeNavHost">HomeNavHost</string>
+    <string name="data_not_found">Data not found</string>
+</resources>
