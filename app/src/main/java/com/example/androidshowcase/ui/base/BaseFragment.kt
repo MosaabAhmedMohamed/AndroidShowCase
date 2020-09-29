@@ -29,7 +29,7 @@ abstract class BaseFragment constructor(
         }
     }
 
-    open fun showRetryDialog(retry: Boolean) {
+     fun showRetryDialog(retry: Boolean) {
         if (retry) RetryDialog.newInstance()
             .show(childFragmentManager, RetryDialog::class.simpleName)
     }

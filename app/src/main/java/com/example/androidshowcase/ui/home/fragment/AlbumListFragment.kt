@@ -1,5 +1,6 @@
 package com.example.androidshowcase.ui.home.fragment
 
+import android.util.Log
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -11,7 +12,6 @@ import com.example.androidshowcase.presentation.home.viewmodel.AlbumListViewMode
 import com.example.androidshowcase.ui.base.BaseFragment
 import kotlinx.android.synthetic.main.fragment_album_list.*
 import javax.inject.Inject
-
 
 
 class AlbumListFragment @Inject
@@ -50,8 +50,11 @@ constructor(
         viewModel.loadData()
     }
 
-    override fun onViewClicked() {
 
+
+    override fun onViewClicked() {
+        showRetryDialog(true)
     }
+
 
 }
