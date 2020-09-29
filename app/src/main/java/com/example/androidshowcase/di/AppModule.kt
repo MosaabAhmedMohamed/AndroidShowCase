@@ -3,6 +3,7 @@ package com.example.androidshowcase.di
 import android.app.Application
 import android.content.Context
 import android.content.SharedPreferences
+import android.os.Bundle
 import com.bumptech.glide.Glide
 import com.bumptech.glide.RequestManager
 import com.bumptech.glide.request.RequestOptions
@@ -108,6 +109,13 @@ object AppModule {
     @Provides
     fun provideAuthenticationInterceptor(): AuthenticationInterceptor {
         return AuthenticationInterceptor(Constants.API_KEY)
+    }
+
+    @JvmStatic
+    @Singleton
+    @Provides
+    fun provideBundle(): Bundle {
+        return Bundle()
     }
 }
 

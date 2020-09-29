@@ -1,19 +1,18 @@
 package com.example.androidshowcase.di
 
-
 import android.app.Application
-import com.example.androidshowcase.di.home.HomeComponent
-import com.example.androidshowcase.di.splash.SplashComponent
-import com.example.androidshowcase.ui.base.BaseActivity
+import com.example.androidshowcase.BaseApplication
 import dagger.BindsInstance
 import dagger.Component
+import dagger.android.support.AndroidSupportInjectionModule
 import javax.inject.Singleton
 
 @Singleton
 @Component(
     modules = [
+        AndroidSupportInjectionModule::class,
         AppModule::class,
-        SubComponentsModule::class
+        ActivityModule::class
     ]
 )
 interface AppComponent {
@@ -21,18 +20,11 @@ interface AppComponent {
 
     @Component.Builder
     interface Builder {
-
         @BindsInstance
         fun application(application: Application): Builder
 
         fun build(): AppComponent
     }
-
-    fun inject(baseActivity: BaseActivity)
-
-    fun homeComponent(): HomeComponent.Factory
-
-    fun splashComponent(): SplashComponent.Factory
-
+    fun inject(application: BaseApplication)
 
 }

@@ -12,7 +12,9 @@ constructor(
 ) : AlbumRepository {
 
     override suspend fun getAlbumInfo(artistName: String, albumName: String, mbId: String?) =
-        homeApi.getAlbumInfoAsync(artistName, albumName, mbId)?.toDomainModel()
+        homeApi.getAlbumInfoAsync(artistName, albumName, mbId)
+            ?.album
+            ?.toDomainModel()
 
     override suspend fun searchAlbum(phrase: String) =
         homeApi.searchAlbumAsync(phrase).results

@@ -3,6 +3,7 @@ package com.example.androidshowcase.di.home
 import com.example.androidshowcase.data.remote.client.HomeApi
 import com.example.androidshowcase.data.repository.AlbumRepositoryImpl
 import com.example.androidshowcase.domain.home.repository.AlbumRepository
+import com.example.androidshowcase.domain.home.usecase.AlbumDetailUseCase
 import com.example.androidshowcase.domain.home.usecase.AlbumUseCase
 import dagger.Module
 import dagger.Provides
@@ -32,6 +33,13 @@ object HomeModule {
     @Provides
     internal fun provideAlbumUseCase(repository: AlbumRepository): AlbumUseCase {
         return AlbumUseCase(repository)
+    }
+
+    @JvmStatic
+    @HomeScope
+    @Provides
+    internal fun provideAlbumDetailUseCase(repository: AlbumRepository): AlbumDetailUseCase {
+        return AlbumDetailUseCase(repository)
     }
 
 }

@@ -1,4 +1,4 @@
-package com.example.androidshowcase.ui.home.fragment
+package com.example.androidshowcase.ui.home.fragment.albums
 
 import android.view.LayoutInflater
 import android.view.View

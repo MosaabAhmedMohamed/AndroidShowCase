@@ -7,7 +7,15 @@
 
     <fragment
         android:id="@+id/albumListFragment"
-        android:name="com.example.androidshowcase.ui.home.fragment.AlbumListFragment"
+        android:name="com.example.androidshowcase.ui.home.fragment.albums.AlbumListFragment"
         android:label="fragment_album_list"
-        tools:layout="@layout/fragment_album_list" />
+        tools:layout="@layout/fragment_album_list" >
+        <action
+            android:id="@+id/action_albumListFragment_to_albumDetailFragment"
+            app:destination="@id/albumDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/albumDetailFragment"
+        android:name="com.example.androidshowcase.ui.home.fragment.detail.AlbumDetailFragment"
+        android:label="AlbumDetailFragment" />
 </navigation>

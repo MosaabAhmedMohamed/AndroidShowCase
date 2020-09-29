@@ -2,6 +2,7 @@ package com.example.androidshowcase.data.remote.client
 
 import com.example.androidshowcase.data.remote.model.AlbumDataModel
 import com.example.androidshowcase.data.remote.model.AlbumSearchResultDataModel
+import com.example.androidshowcase.data.remote.model.GetAlbumInfoResponse
 import com.example.androidshowcase.data.remote.model.SearchAlbumResponse
 import io.reactivex.Single
 import retrofit2.http.GET
@@ -22,6 +23,6 @@ internal interface HomeApi {
         @Query("artist") artistName: String,
         @Query("album") albumName: String,
         @Query("mbid") mbId: String?
-    ): AlbumDataModel?
+    ): GetAlbumInfoResponse?
 
 }

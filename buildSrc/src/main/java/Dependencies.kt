@@ -83,6 +83,8 @@ object LIFECYCLE {
 
 object DAGGER {
     const val DAGGER = "com.google.dagger:dagger:${Versions.DAGGER}"
+    const val DAGGER_ANDROID = "com.google.dagger:dagger-android-support:${Versions.DAGGER}"
+    const val DAGGER_ANNOTATION = "com.google.dagger:dagger-android-processor:${Versions.DAGGER}"
     const val DAGGER_KAPT = "com.google.dagger:dagger-compiler:${Versions.DAGGER}"
 }
 

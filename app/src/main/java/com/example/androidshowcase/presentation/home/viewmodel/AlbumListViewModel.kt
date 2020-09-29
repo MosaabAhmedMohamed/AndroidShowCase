@@ -1,9 +1,9 @@
 package com.example.androidshowcase.presentation.home.viewmodel
 
 import androidx.lifecycle.viewModelScope
+import com.example.androidshowcase.domain.BaseApiResponse
 import com.example.androidshowcase.domain.home.model.AlbumDomainModel
 import com.example.androidshowcase.domain.home.usecase.AlbumUseCase
-import com.example.androidshowcase.presentation.NavManager
 import com.example.androidshowcase.presentation.home.action.BaseAction
 import com.example.androidshowcase.presentation.home.viewstate.BaseViewState
 import kotlinx.coroutines.launch
@@ -23,14 +23,15 @@ internal class AlbumListViewModel
         viewModelScope.launch {
             useCase.executeList().also { result ->
                 val action = when (result) {
-                    is AlbumUseCase.Result.Success ->
+                    is BaseApiResponse.SuccessList ->
                         if (result.data.isEmpty()) {
                             Action.AlbumListLoadingFailure
                         } else {
                             Action.AlbumListLoadingSuccess(result.data)
                         }
-                    is AlbumUseCase.Result.Error ->
+                    is BaseApiResponse.Error ->
                         Action.AlbumListLoadingFailure
+                    is BaseApiResponse.SuccessItem -> TODO()
                 }
                 sendAction(action)
             }

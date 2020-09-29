@@ -2,6 +2,7 @@ package com.example.androidshowcase.di.home
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import com.example.androidshowcase.presentation.home.viewmodel.AlbumDetailViewModel
 import com.example.androidshowcase.presentation.home.viewmodel.AlbumListViewModel
 import com.example.androidshowcase.presentation.home.viewmodel.HomeViewModelFactory
 import dagger.Binds
@@ -19,6 +20,11 @@ abstract class HomeViewModelModule {
     @Binds
     @IntoMap
     @HomeViewModelKey(AlbumListViewModel::class)
-    internal abstract fun bindHomeViewModel(albumListViewModel: AlbumListViewModel): ViewModel
+    internal abstract fun bindAlbumListViewModel(albumListViewModel: AlbumListViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @HomeViewModelKey(AlbumDetailViewModel::class)
+    internal abstract fun bindAlbumDetailViewModel(albumDetailViewModel: AlbumDetailViewModel): ViewModel
 
 }

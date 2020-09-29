@@ -1,4 +1,4 @@
-package com.example.androidshowcase.ui.home.fragment
+package com.example.androidshowcase.ui.home.fragment.albums
 
 import android.content.Context
 import android.content.res.Resources
@@ -34,7 +34,9 @@ class GridAutofitLayoutManager : GridLayoutManager {
     private var lastWidth = 0
     private var lastHeight = 0
 
-    constructor(context: Context, columnWidth: Int) : super(context, INITIAL_SPAN_COUNT) {
+    constructor(context: Context, columnWidth: Int) : super(context,
+        INITIAL_SPAN_COUNT
+    ) {
         this.columnWidth = columnWidth
     }
 
@@ -44,7 +46,8 @@ class GridAutofitLayoutManager : GridLayoutManager {
         orientation: Int,
         reverseLayout: Boolean
     ) : super(
-        context, INITIAL_SPAN_COUNT, orientation, reverseLayout
+        context,
+        INITIAL_SPAN_COUNT, orientation, reverseLayout
     ) {
         this.columnWidth = columnWidth
     }

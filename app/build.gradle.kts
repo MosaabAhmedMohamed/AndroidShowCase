@@ -75,6 +75,8 @@ dependencies {
 
     implementation(DAGGER.DAGGER)
     kapt(DAGGER.DAGGER_KAPT)
+    implementation(DAGGER.DAGGER_ANDROID)
+    kapt(DAGGER.DAGGER_ANNOTATION)
 
     implementation(NAVIGATION.NAVIGATION_FRAGMENT)
     implementation(NAVIGATION.NAVIGATION_UI)

@@ -1,30 +1,16 @@
 package com.example.androidshowcase.di.home
 
-import androidx.fragment.app.FragmentFactory
-import androidx.lifecycle.ViewModelProvider
-import com.bumptech.glide.RequestManager
-import com.bumptech.glide.request.RequestOptions
-import com.example.androidshowcase.ui.home.fragment_factory.HomeFragmentFactory
+import com.example.androidshowcase.ui.home.fragment.albums.AlbumListFragment
+import com.example.androidshowcase.ui.home.fragment.detail.AlbumDetailFragment
 import dagger.Module
-import dagger.Provides
-import javax.inject.Named
+import dagger.android.ContributesAndroidInjector
 
 @Module
-object HomeFragmentsModule {
+abstract class  HomeFragmentsModule {
+    @ContributesAndroidInjector
+    abstract fun contributeAlbumListFragment(): AlbumListFragment
 
-    @JvmStatic
-    @HomeScope
-    @Provides
-    @Named("HomeFragmentFactory")
-    fun provideHomeFragmentFactory(
-        viewModelFactory: ViewModelProvider.Factory,
-        requestOptions: RequestOptions,
-        requestManager: RequestManager
-    ): FragmentFactory {
-        return HomeFragmentFactory(
-            viewModelFactory,
-            requestOptions,
-            requestManager
-        )
-    }
+    @ContributesAndroidInjector
+    abstract fun contributeAlbumDetailFragment(): AlbumDetailFragment
+
 }

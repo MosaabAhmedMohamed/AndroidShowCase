@@ -9,12 +9,9 @@ import com.example.androidshowcase.ui.custom.RetryDialog
 
 abstract class BaseActivity : AppCompatActivity() {
 
-    abstract fun inject()
     private var mProgressDialog: ProgressDialog? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        (application as BaseApplication).appComponent
-            .inject(this)
         super.onCreate(savedInstanceState)
     }
 
